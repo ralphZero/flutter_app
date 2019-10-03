@@ -15,8 +15,9 @@ class Home extends StatelessWidget{
           "Hello part. 2",
           textDirection: TextDirection.ltr,
           style: TextStyle(
+              decoration: TextDecoration.none,
               color: Colors.white,
-              fontSize: 30.0
+              fontSize: 30.0,
           ),
         ),
       ),
