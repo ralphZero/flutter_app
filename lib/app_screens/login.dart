@@ -52,8 +52,7 @@ class Login extends StatelessWidget {
         ),
         Row(
           children: <Widget>[
-            Container(
-
+            Flexible(
               child: FormDesign(),
             )
           ],
@@ -66,41 +65,48 @@ class Login extends StatelessWidget {
 class FormDesign extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Center(
-              child: TextField(
-                keyboardType: TextInputType.text,
+        SizedBox(
+          height: 50.0,
+          child: Container(
+            margin: EdgeInsets.only(top:10.0, left: 20.0, right: 20.0),
+            alignment: Alignment.center,
+            child: TextField(
                 decoration: InputDecoration(
-                  helperText: "Username"
+              hintText: "Username",
+            )),
+          ),
+        ),
+        SizedBox(
+          height: 50.0,
+          child: Container(
+            margin: EdgeInsets.only(top: 10.0, left: 20.0, right: 20.0),
+            alignment: Alignment.center,
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: "Password",
+              ),
+              obscureText: true,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 50.0,
+          child: Container(
+              margin: EdgeInsets.only(top:10.0, left: 20.0, right: 20.0),
+              child: FlatButton(
+                color: Colors.blue,
+                child: Center(
+                  child: Text(
+                    "Login",
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-              )
-            )
-          ],
-        ),
-        Row(
-          children: <Widget>[
-            Container(
-              height: 50.0,
-              color: Colors.blue,
-              child: Text(
-                "Text Two"
-              ),
-            )
-          ],
-        ),
-        Row(
-          children: <Widget>[
-            Center(
-              child: Text(
-                "Text Three"
-              ),
-            )
-          ],
+                onPressed: () {},
+              )),
         )
       ],
     );
